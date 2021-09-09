@@ -22,6 +22,29 @@ function perkalian() {
     console.log("Array Angka = " + angka);
     console.log("Map Array Kali 2 = " + kali2);
 
+    //reduce
+    let reducer = angka.reduce((totalResult, currValue) =>
+    //The callback method must return a value using the required function       
+    { return totalResult * currValue; });
+    console.log("Hasil Tanpa initial value")
+    console.log(reducer);
+
+    console.log("Diberikan initial value 2. Hasil akan menjadi dobel")
+    var dobel = angka.reduce((totalResult, currValue) => { return totalResult * currValue; }, 2);
+    console.log(dobel);
+
+    //filter
+    var filter = angka.filter(function (number) {
+        return number >= 5;
+    });
+    console.log("Array Hasil Filter Angka >= 5 = " + filter);
+
+    //forEach
+    angka.forEach((num, index, arr) => {
+        arr[index] = num * 5
+    })
+    console.log("ForEach Array Kali 5 = " + angka);
+
     //promise
     const mypromise = new Promise((resolve, reject) => {
         if (a, b, c != 0) {
